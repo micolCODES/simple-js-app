@@ -1,0 +1,57 @@
+:root {
+    --pikachuYellow: #f4dc26;
+    --pikachuBrown: #5c3613;
+    --pikachuRed: #E92929;
+}
+
+* {
+    /*border: 1px solid black !important;*/
+    font-family: 'Lucida Sans', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+
+.frame {
+    background-color: var(--pikachuYellow);
+    border: 1px solid var(--pikachuBrown);
+    width: 300px;
+    height: 500px;
+    left:0;
+    right: 0;
+    top: 5%;
+    border-radius: 30px;
+    z-index: 0;
+    position: absolute;
+    margin: 0 auto;
+}
+
+.screen {
+    border-radius: 10px;
+    background-color: white;
+    width: 280px;
+    height: 410px;
+    position:relative;
+    z-index: 1;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.dot {
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.app {
+    z-index: 2;
+    position: relative;
+    padding: 15px;
+    line-height: 1.3;
+    height: 410px;
+}
