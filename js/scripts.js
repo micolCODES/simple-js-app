@@ -32,7 +32,7 @@ pokemonList.forEach(function(pokemon) {
     let buttons = document.createElement("button");
     button.innerText = pokemon;
     buttons.classList.add(".buttonsClass");
-    listItem.appendChild(button);
+    listItem.appendChild(buttons);
     ulList.appendChild(listItem);
 
     /*document.write("<BR>" + pokemon.name + ": (height: " + pokemon.height + ")");

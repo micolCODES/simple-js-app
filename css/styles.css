@@ -57,7 +57,7 @@
 }
 
 .buttonsClass {
-    margin: 3px white;
+    margin: 3px;
     background-color: gray;
     color: var(--pikachuBrown);
 }
