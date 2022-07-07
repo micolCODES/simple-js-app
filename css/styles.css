@@ -55,3 +55,9 @@
     line-height: 1.3;
     height: 410px;
 }
+
+.buttonsClass {
+    margin: 3px white;
+    background-color: gray;
+    color: var(--pikachuBrown);
+}

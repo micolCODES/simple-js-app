@@ -27,8 +27,16 @@ let pokemonList = pokemonRepository.getAll();
 
 
 pokemonList.forEach(function(pokemon) {
-    document.write("<BR>" + pokemon.name + ": (height: " + pokemon.height + ")");
+    let ulList = document.querySelector("ul");
+    let listItem = document.createElement("li");
+    let buttons = document.createElement("button");
+    button.innerText = pokemon;
+    buttons.classList.add(".buttonsClass");
+    listItem.appendChild(button);
+    ulList.appendChild(listItem);
+
+    /*document.write("<BR>" + pokemon.name + ": (height: " + pokemon.height + ")");
     if (pokemon.height >= 0.7) {
         document.write(" - Wow, that's big!");
-    }
+    }*/
 });
