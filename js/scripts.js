@@ -47,7 +47,7 @@ let pokemonList = pokemonRepository.getAll();
 
 
 pokemonList.forEach(function(pokemon) {
-    pokemonList.addListItem(pokemon);
+    pokemonRepository.addListItem(pokemon);
 
     /*document.write("<BR>" + pokemon.name + ": (height: " + pokemon.height + ")");
     if (pokemon.height >= 0.7) {
