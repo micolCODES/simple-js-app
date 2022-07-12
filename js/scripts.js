@@ -1,11 +1,6 @@
 let pokemonRepository = (function () {
-    var pokemonList = [
-        {name: "Charizard", height: 1.7,types: ["fire", "flying"]}, 
-        {name: "Squirtle", height: 0.5, types: ["water"]}, 
-        {name: "Bulbasaur",height: 0.7, types: ["grass", "poison"]}, 
-        {name: "Pikachu",height: 0.4, types: ["electric"]}, 
-        {name: "Nidoran",height: 0.5, types: ["poison"]}
-    ];
+    let pokemonList = [];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     
     function getAll() {
         return pokemonList;
@@ -35,22 +30,42 @@ let pokemonRepository = (function () {
         console.log(pokemon);
     }
 
+    function loadList (){
+        return fetch(apiUrl).then(function (response) {
+           return response.json(); 
+        }).then(function (json){
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+                //console.log(pokemon); just checking that this works. It does. All pokemons added
+            });
+        }).catch(function (e) {
+            console.error(e);
+        })
+    }
+
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        showDetails: showDetails
+        showDetails: showDetails,
+        loadList: loadList
     }
 }) ();
 
-let pokemonList = pokemonRepository.getAll();
+//let pokemonList = pokemonRepository.getAll();
+//console.log(pokemonRepository.getAll())
 
-
-pokemonList.forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon);
-
-    /*document.write("<BR>" + pokemon.name + ": (height: " + pokemon.height + ")");
-    if (pokemon.height >= 0.7) {
-        document.write(" - Wow, that's big!");
-    }*/
+pokemonRepository.loadList().then(function(){
+    pokemonRepository.getAll().forEach(function (pokemon){
+        pokemonRepository.addListItem(pokemon);
+    });
 });
+
+
+/* pokemonList.forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon); 
+});*/
