@@ -1,5 +1,5 @@
 :root {
-    --pikachuYellow: #f4dc26;
+    --pikachuYellow: #ffe066;
     --pikachuBrown: #5c3613;
     --pikachuRed: #E92929;
 }
@@ -26,18 +26,26 @@
     margin: 0 auto;
 }
 
+#logo {
+    width: 60%;
+    position: relative;
+    margin: 0 auto;
+    top: 10px;
+    left: 55px;
+}
 .screen {
     border-radius: 10px;
     background-color: white;
     width: 280px;
-    height: 410px;
+    height: 360px;
     position:relative;
     z-index: 1;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 15px;
+    padding: 10px 0 10px 0;
 }
 
-.dot {
+/*.dot {
     border-radius: 50%;
     background-color: white;
     z-index: 2;
@@ -46,14 +54,14 @@
     height: 40px;
     margin: auto;
     margin-top: 5px;
-}
+}*/
 
 .app {
     z-index: 2;
     position: relative;
-    padding: 2px;
     line-height: 1.3;
-    height: 410px;
+    height: 100%;
+    overflow: scroll;
 }
 
 .buttonsClass {
@@ -61,14 +69,20 @@
     height: 100%;
     position: relative;
     margin-top: 0;
-    border-radius: 5px;
-    background-color: lightgray;
     color: var(--pikachuBrown);
     list-style-type: none;
-    padding: 2%;
+    padding: 0 5px 0 5px;
     margin: 0;
 }
 
 button {
     border: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 5px;
+    text-transform: capitalize;
+    scrollbar-width: 10px;
+    scrollbar-color: var(--pikachuBrown);
 }
