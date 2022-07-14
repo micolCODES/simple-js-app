@@ -1,7 +1,8 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    
+
+
     function getAll() {
         return pokemonList;
     }
@@ -31,10 +32,92 @@ let pokemonRepository = (function () {
         });
     }
 
+    function showModal (pokemonClicked) {
+        //made variable 'modalBox" to select the <div> that will contain the modal
+        let modalBox = document.getElementById("modal-container");
+
+        //??? clreaning any content from the modal, just in case, I think ?!?
+        modalBox.innerHTML = "";
+
+        //making a virtual modal box and giving it a class of "modal"
+        let virtualModalDiv = document.createElement("div");
+        virtualModalDiv.classList.add("modal");
+
+        //My virtualModalDiv now exists but it's empty. 
+        //Let's add some elements, namely:
+        //- A title: the name of the PokemonClicked
+        //- A text: the height of the PokemonClicked
+        //- A picture: the icon of the PokemonCLicked
+        //- A close button to get the hell out of the damn modal
+        // All with class for CSS styling and variable inner text
+
+        //Title: nameOfPokemon
+        let nameOfPokemon = document.createElement('h1');
+        nameOfPokemon.classList.add("name");
+        nameOfPokemon.innerText = pokemonClicked.name;
+
+        //Text: heightOfPokemon
+        let heightOfPokemon = document.createElement('p')
+        heightOfPokemon.classList.add("height");
+        heightOfPokemon.innerText = 'Height: '+pokemonClicked.height;
+
+        //Picture: pictureOfPokemon
+        let pictureOfPokemon = document.createElement('img');
+        pictureOfPokemon.classList.add("picture");
+        pictureOfPokemon.src = pokemonClicked.imageUrl;
+
+        //Close button
+        let virtualCloseButtonDiv = document.createElement('button');
+            //add a class of .close so we can close the modal
+        virtualCloseButtonDiv.classList.add("modal-close");
+        virtualCloseButtonDiv.innerText = "Close";
+            // add event so modal will close when:
+                //you click on button
+        virtualCloseButtonDiv.addEventListener("click", hideModal);
+                //you press Esc
+        window.addEventListener("keydown", (e) => {
+            let modalBox = document.querySelector("#modal-container");
+            if (e.key === "Escape" && modalBox.classList.contains("is-visible")){
+                hideModal();
+            }
+        })
+                //you click outside of the box
+        modalBox.addEventListener("click", (e) =>{
+            let whereYouClick = e.target;
+            if (whereYouClick === modalBox) {
+                hideModal();
+            }
+        })
+        
+        //Now nest Title, Text, Picture and Close inside of my virtualModalDiv
+        virtualModalDiv.appendChild(nameOfPokemon);
+        virtualModalDiv.appendChild(heightOfPokemon);
+        virtualModalDiv.appendChild(pictureOfPokemon);
+        virtualModalDiv.appendChild(virtualCloseButtonDiv);
+
+        //Now stick virtualModalDiv inside of modalBox
+        modalBox.appendChild(virtualModalDiv);
+
+        //in this function, we want the modal to be visible, so we need to add the CSS class .isvisible
+        modalBox.classList.add("is-visible");
+
+
+
+        //console.log(item.imageUrl);
+        //document.write('<img src="'+item.imageUrl+'">');
+    }
+
+    function hideModal() {
+        let modalBox = document.querySelector("#modal-container");
+        modalBox.classList.remove('is-visible');
+    }
+
     function showDetails (item) {
         pokemonRepository.loadDetails(item).then(function(){
             console.log(item);
+            showModal(item);
         });
+
     }
 
     function loadList (){
@@ -71,6 +154,7 @@ let pokemonRepository = (function () {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
+        showModal: showModal,
         showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails
@@ -85,6 +169,8 @@ pokemonRepository.loadList().then(function () {
         pokemonRepository.addListItem(pokemon);
     });
 });
+
+
 
 
 /* pokemonList.forEach(function(pokemon) {

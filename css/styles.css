@@ -1,6 +1,7 @@
 :root {
     --pikachuYellow: #ffe066;
-    --pikachuBrown: #5c3613;
+    --pikachuLightYellow: #fef9e6;
+    --pikachuBlue: #2c62aa;
     --pikachuRed: #E92929;
 }
 
@@ -13,8 +14,8 @@
 
 
 .frame {
-    background-color: var(--pikachuYellow);
-    border: 1px solid var(--pikachuBrown);
+    background-color: #eaeff7;
+    border: 1px solid var(--pikachuBlue);
     width: 300px;
     height: 500px;
     left:0;
@@ -85,4 +86,41 @@ button {
     text-transform: capitalize;
     scrollbar-width: 10px;
     scrollbar-color: var(--pikachuBrown);
+    background-color: var(--pikachuLightYellow);
+    font-weight: 300;
 }
+
+#modal-container {
+    border-radius: 10px;
+    width:100%;
+    height:100%;
+    text-transform: capitalize;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    text-align: center;
+    z-index: 999;
+    /*normally, we won't want to see it until we make it visible by adding the class .is-visible*/
+    display: none;
+}
+
+
+#modal-container.is-visible {
+    display: block;
+}
+
+.modal-close{
+    position: relative;
+    margin-top: 61px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 0 0 10px 10px;
+    background: var(--pikachuBlue);
+    color: white;
+    font-weight: 600;
+}
+
+.picture {
+    width: 50%;
+}
+
