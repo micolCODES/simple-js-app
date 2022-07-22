@@ -22,8 +22,12 @@ let pokemonRepository = (function () {
         let ulList = document.querySelector("ul");
         let listItem = document.createElement("li");
         let buttons = document.createElement("button");
+        listItem.classList.add('group-list-item');
         buttons.innerText = pokemon.name;
         buttons.classList.add(".buttonsClass");
+        bottons.classList.add('btn', 'btn-primary');
+        buttons.setAttribute('data-toggle', 'modal');
+        buttons.setAttribute('data-target', '#myModal')
         listItem.appendChild(buttons);
         ulList.appendChild(listItem);
         //call function to show detail of Pokemon clicked
@@ -32,7 +36,49 @@ let pokemonRepository = (function () {
         });
     }
 
-    function showModal (pokemonClicked) {
+    function showModal(pokemonClicked) {
+        //header container
+        let modalHeader = $('modal-header');
+        // contained in header, is title <h5>
+        let modalTitle = $('modal-title');
+        //modal body 
+        let modalBody = $('.modal-body');
+        
+        //empty modal title and body so they don't show more than 1 pokemon at the time.
+        //This is useful after you've used it once
+        modalTitle.empty();
+        modalBody.empty();
+
+        //now I create elements that will show up inside of my modal:
+        //name, images, height, weight, type and abilities
+            //Name
+        let nameElement = $('<h1>'+pokemonClicked.name+'</h1>');
+            //img front
+        let imageElementFront = $('<img class="modal-img picture">');
+        imageElementFront.attr("src", pokemonClicked.imageUrlFront);
+            //img back
+        let imageElementBack = $('<img class="modal-img picture">');
+        imageElementBack.attr("src", pokemonClicked.imageUrlBack);
+            //height
+        let heightElement = $('<p>'+'Height: '+pokemonClicked.height+'</p>');
+            //weight
+        let weightElement = $('<p>'+'Weight: '+pokemonClicked.weight+'</p>');
+            //type
+        let typeElement = $('<p>'+'Type: '+pokemonClicked.type+'</p>');
+            //abilities
+        let abilitiesElement = $('<p>'+'Abilities: '+pokemonClicked.abilities+'</p>');
+        
+        // now append every element created to wither the modalTitle or the modalBody
+        modalTitle.append(nameElement);
+        modalBody.append(imageElementFront);
+        modalBody.append(imageElementBack);
+        modalBody.append(heightElement);
+        modalBody.append(weightElement);
+        modalBody.append(typeElement);
+        modalBody.append(abilitiesElement);
+    }
+
+    /*function showModal (pokemonClicked) {
         //made variable 'modalBox" to select the <div> that will contain the modal
         let modalBox = document.getElementById("modal-container");
 
@@ -100,15 +146,10 @@ let pokemonRepository = (function () {
 
         //in this function, we want the modal to be visible, so we need to add the CSS class .isvisible
         modalBox.classList.add("is-visible");
-
-
-
-        //console.log(item.imageUrl);
-        //document.write('<img src="'+item.imageUrl+'">');
-    }
+*/
 
     function hideModal() {
-        let modalBox = document.querySelector("#modal-container");
+        let modalBox = document.querySelector("#myModal");
         modalBox.classList.remove('is-visible');
     }
 
@@ -130,7 +171,6 @@ let pokemonRepository = (function () {
                     detailsUrl: item.url
                 };
                 add(pokemon);
-                //console.log(pokemon); //just checking that this works. It does. All pokemons added
             });
         }).catch(function (e) {
             console.error(e);
@@ -142,9 +182,12 @@ let pokemonRepository = (function () {
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function(details) {
-            item.imageUrl = details.sprites.front_default;
+            item.imageUrlFront = details.sprites.front_default;
+            item.imageUrlBack = details.sprites.back_default;
             item.height = details.height;
             item.types = details.types;
+            item.weight = details.weight;
+            item.type = detail.types;
         }).catch(function (e) {
             console.error(e);
         });
@@ -161,18 +204,8 @@ let pokemonRepository = (function () {
     }
 }) ();
 
-//let pokemonList = pokemonRepository.getAll();
-//console.log(pokemonRepository.getAll())
-
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
         pokemonRepository.addListItem(pokemon);
     });
 });
-
-
-
-
-/* pokemonList.forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon); 
-});*/
