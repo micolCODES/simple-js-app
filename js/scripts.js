@@ -25,7 +25,7 @@ let pokemonRepository = (function () {
         listItem.classList.add('group-list-item');
         buttons.innerText = pokemon.name;
         buttons.classList.add(".buttonsClass");
-        bottons.classList.add('btn', 'btn-primary');
+        buttons.classList.add('btn', 'btn-light');
         buttons.setAttribute('data-toggle', 'modal');
         buttons.setAttribute('data-target', '#myModal')
         listItem.appendChild(buttons);
@@ -38,9 +38,9 @@ let pokemonRepository = (function () {
 
     function showModal(pokemonClicked) {
         //header container
-        let modalHeader = $('modal-header');
+        let modalHeader = $('.modal-header');
         // contained in header, is title <h5>
-        let modalTitle = $('modal-title');
+        let modalTitle = $('.modal-title');
         //modal body 
         let modalBody = $('.modal-body');
         
@@ -58,7 +58,7 @@ let pokemonRepository = (function () {
         imageElementFront.attr("src", pokemonClicked.imageUrlFront);
             //img back
         let imageElementBack = $('<img class="modal-img picture">');
-        imageElementBack.attr("src", pokemonClicked.imageUrlBack);
+        imageElementBack.attr('src', pokemonClicked.imageUrlBack);
             //height
         let heightElement = $('<p>'+'Height: '+pokemonClicked.height+'</p>');
             //weight
