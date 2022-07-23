@@ -47,6 +47,7 @@ let pokemonRepository = (function () {
         //empty modal title and body so they don't show more than 1 pokemon at the time.
         //This is useful after you've used it once
         modalTitle.empty();
+        
         modalBody.empty();
 
         //now I create elements that will show up inside of my modal:
