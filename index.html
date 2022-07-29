@@ -14,7 +14,7 @@
         <nav class="navbar navbar-light fixed-top bg-light">
             <a class="navbar-brand" href="#">
               <img src="img/pokeball.png" width="30" height="30" class="d-inline-block align-top" alt="opkemon logo">
-            Bootstrapping my way out of APIs and jQuery
+            Bootstrapping my way into APIs and jQuery
             </a>
         </nav>
         <div class="frame">
@@ -22,38 +22,10 @@
                 <img  id="logo" src="img/pokemonLogo.png" alt="Pokemon Logo">
             </div>
             <div class="screen">
-                <div id="modal-container"></div>
                 <div class="app">
                     
                     <ul class="buttonsClass list-group">
                     </ul>
-
-
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                    </button>
-                    
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div class="modal-body">
-                            ...
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">X</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
 
                     <!--bootstrap
                         //jQuery first, minified version with the right number (3.3.1) that match was bootstrap had, exept that was the lite version-->
@@ -66,9 +38,31 @@
                     <script src="js/scripts.js"></script>
                 </div>
             </div>
-            <div class="dot"></div>
+            <div class="front dot"></div>
+            <div class="design floppy right-bg"></div>
+            <div class="bottom left-bg"></div>
         </div>
-    
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>-->
+            </div>
+            <div class="modal-body">
+            Modal Body
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">X</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
         
         
     </body>

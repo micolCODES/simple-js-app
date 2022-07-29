@@ -13,19 +13,58 @@
 }
 
 
-.frame {
+
+.modal-title {
+    text-transform: capitalize;
+
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+
+.navbar {
+    z-index: 0;
+}
+.modal-header {
+    font-size: 8px;
+    padding: 0 5px 0;
+    margin: 0;
+    text-align: center;
+   }
+
+@media screen and (max-width: 600px) {
+   .modal-dialog {
+    width: 200px;
+    font-size: 14px;
+    position: relative;
+    margin: 0 auto 0 auto;
+   } 
+
+   .modal-body {
+    height: 180px;
+   }
+
+
+.picture {
+    width: 50%;
+}
+
+   .frame {
     background-color: #eaeff7;
     border: 1px solid var(--pikachuBlue);
     width: 300px;
     height: 500px;
-    left:0;
-    right: 0;
-    top: 5%;
     border-radius: 30px;
     z-index: 0;
-    position: absolute;
-    margin: 0 auto;
-    margin-top: 60px;
+    position:absolute;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    margin: auto;
+    
 }
 
 #logo {
@@ -47,7 +86,7 @@
     padding: 10px 0 10px 0;
 }
 
-/*.dot {
+.dot {
     border-radius: 50%;
     background-color: white;
     z-index: 2;
@@ -56,7 +95,7 @@
     height: 40px;
     margin: auto;
     margin-top: 5px;
-}*/
+}
 
 .app {
     z-index: 2;
@@ -90,37 +129,244 @@ button {
     background-color: var(--pikachuLightYellow);
     font-weight: 300;
 }
+}
 
-#modal-container {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .modal-dialog {
+     width: 400px;
+     font-size: 14px;
+     position: relative;
+     margin: 0 auto 0 auto;
+    } 
+ 
+    .modal-body {
+     height: 300px;
+    }
+
+
+    .picture {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    .frame {
+     background-color: #eaeff7;
+     border: 1px solid var(--pikachuBlue);
+     width: 600px;
+     height: 800px;
+     border-radius: 30px;
+     z-index: 0;
+     position:absolute;
+     top: 0; 
+     bottom: 0; 
+     left: 0; 
+     right: 0;
+     margin: auto;
+     
+ }
+ 
+ #logo {
+     width: 25%;
+     position: relative;
+     margin: 0 auto;
+     top: 525px;
+     left: 55px;
+     z-index: 2;
+ }
+ .screen {
+     border-radius: 10px;
+     background-color: white;
+     width: 500px;
+     height: 400px;
+     position: absolute;
+     z-index: 1;
+     top: 45px;
+     left: 45px;
+     margin-top: 0;
+     margin: 0 auto;
+     padding: 10px 0 10px 0;
+ }
+ 
+ .floppy {
     border-radius: 10px;
-    width:100%;
-    height:100%;
-    text-transform: capitalize;
+     background-color: white;
+     z-index: 2;
+     position: absolute;
+     width: 300px;
+     height: 20px;
+     top: 550px;
+     right: 55px;
+     margin: auto;
+     margin-top: 5px;
+ }
+ 
+ .bottom {
+    border-radius: 0 0 25px 25px;
+    background-color: var(--pikachuBlue);
+    width: 599px;
+    height: 100px;
+    z-index: 0;
+    position:absolute;
+    bottom: 0;
+    margin: auto;
+    opacity: 80%;
+ }
+ 
+ .app {
+     z-index: 2;
+     position: relative;
+     line-height: 1.3;
+     height: 100%;
+     overflow: scroll;
+ }
+ 
+ .buttonsClass {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     margin-top: 0;
+     color: var(--pikachuBrown);
+     list-style-type: none;
+     padding: 0 5px 0 5px;
+     margin: 0;
+ }
+ 
+ button {
+     border: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 18px;
+     padding: 10px;
+     margin-top: 5px;
+     text-transform: capitalize;
+     scrollbar-width: 10px;
+     scrollbar-color: var(--pikachuBrown);
+     background-color: var(--pikachuLightYellow);
+     font-weight: 300;
+ }
+ }
+
+
+@media only screen and (min-width: 1025px) {
+    .modal-dialog {
+     width: 800px;
+     font-size: 14px;
+     position: relative;
+     margin: 0 auto 0 auto;
+    } 
+ 
+    .modal-body {
+     height: 200px;
+    }
+
+    .picture {
+        width: 25%;
+        margin: 0 auto;
+    }
+
+    .frame {
+     background-color: var(--pikachuBlue);
+     width: 1000px;
+     height: 700px;
+     border-radius: 30px;
+     z-index: 0;
+     position:absolute;
+     top: 0; 
+     bottom: 0; 
+     left: 0; 
+     right: 0;
+     margin: auto;
+     
+ }
+ 
+ #logo {
+     width: 15%;
+     position: relative;
+     margin: 0 auto;
+     top: 525px;
+     left: 420px;
+     z-index: 2;
+ }
+ .screen {
+     border-radius: 20px;
+     background-color: white;
+     width: 980px;
+     height: 500px;
+     position: absolute;
+     z-index: 1;
+     top: 10px;
+     left: 10px;
+     margin-top: 0;
+     margin: 0 auto;
+     padding: 10px 0 10px 0;
+ }
+ 
+ .right-bg {
+    border-radius: 0 0 0 25px;
+    background-color: white;
+    width: 400px;
+    height: 150px;
+    z-index: 0;
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: auto;
+ }
+ 
+ .left-bg {
+    border-radius: 0 0 25px 0;
+    background-color: white;
+    width: 400px;
+    height: 150px;
+    z-index: 0;
+    position:absolute;
+    bottom: 0;
+    z-index: -1;
+    margin: auto;
+ }
+
+ .front{
+    background-color: #eaeff7;
+    border: 1px solid var(--pikachuBlue);
+    width: 1000px;
+    height: 600px;
+    border-radius: 30px;
     position: absolute;
     top: 0;
-    background-color: white;
-    text-align: center;
-    z-index: 999;
-    /*normally, we won't want to see it until we make it visible by adding the class .is-visible*/
-    display: none;
-}
-
-#modal-container.is-visible {
-    display: block;
-}
-
-.modal-close{
-    position: relative;
-    margin-top: 61px;
-    text-align: center;
-    text-transform: uppercase;
-    border-radius: 0 0 10px 10px;
-    background: var(--pikachuBlue);
-    color: white;
-    font-weight: 600;
-}
-
-.picture {
-    width: 50%;
-}
-
+    z-index: 0;
+ }
+ 
+ .app {
+     z-index: 2;
+     position: relative;
+     line-height: 1.3;
+     height: 100%;
+     overflow: scroll;
+ }
+ 
+ .buttonsClass {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     margin-top: 0;
+     color: var(--pikachuBrown);
+     list-style-type: none;
+     padding: 0 5px 0 5px;
+     margin: 0;
+ }
+ 
+ button {
+     border: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 18px;
+     padding: 10px;
+     margin-top: 5px;
+     text-transform: capitalize;
+     scrollbar-width: 10px;
+     scrollbar-color: var(--pikachuBrown);
+     background-color: var(--pikachuLightYellow);
+     font-weight: 300;
+ }
+ }
