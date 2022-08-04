@@ -6,7 +6,6 @@
 }
 
 * {
-    /*border: 1px solid black !important;*/
     font-family: 'Lucida Sans', sans-serif;
     font-weight: 300;
     box-sizing: border-box;
@@ -16,25 +15,33 @@
 
 .modal-title {
     text-transform: capitalize;
-
+    margin: 0 auto;
 }
 
 .modal-backdrop {
     z-index: 1;
 }
 
+.modal-body {
+    text-transform: capitalize;
+    margin: 0 auto;
+}
 
 .navbar {
     z-index: 0;
 }
+
 .modal-header {
-    font-size: 8px;
     padding: 0 5px 0;
     margin: 0;
     text-align: center;
    }
 
 @media screen and (max-width: 600px) {
+    * {
+    font-size: 1vh;
+    }
+
    .modal-dialog {
     width: 200px;
     font-size: 14px;
@@ -132,9 +139,11 @@ button {
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    * {
+    }
+
     .modal-dialog {
      width: 400px;
-     font-size: 14px;
      position: relative;
      margin: 0 auto 0 auto;
     } 
@@ -145,8 +154,7 @@ button {
 
 
     .picture {
-        width: 30%;
-        margin: 0 auto;
+        width: 50%;
     }
 
     .frame {
@@ -260,8 +268,7 @@ button {
     }
 
     .picture {
-        width: 25%;
-        margin: 0 auto;
+        width: 50%;
     }
 
     .frame {

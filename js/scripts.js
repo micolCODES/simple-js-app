@@ -65,11 +65,34 @@ let pokemonRepository = (function () {
             //weight
         let weightElement = $('<p>'+'Weight: '+pokemonClicked.weight+'</p>');
             //type
-        let typesElement = $('<p>'+'Type: '+pokemonClicked.types+'</p>');
+                //function to get all of the elements in the types array
+        function getTypes(types) {
+        let result = '';
+        types.map(type => {
+            result += ' '; //add space first, to be removed after string is done
+            result += type.type.name;
+
+        })
+        result = result.substring(1); // string is done, so remove first space
+        result = result.split(' ').join(', '); //replace spaces with ', ' and since first space removed, single element string will not have anny comma
+        return result;
+        }
+
+        let typesElement = $('<p>'+'Type: '+getTypes(pokemonClicked.types)+'</p>');
             //abilities
-        let abilitiesElement = $('<p>'+'Abilities: '+pokemonClicked.abilities+'</p>');
+        function getAbilities(abilities) {
+            let result = '';
+            abilities.map(ability => {
+                result += ' '; //add space first, to be removed after string is done
+                result += ability.ability.name;
+            })
+            result = result.substring(1); // string is done, so remove first space
+            result = result.split(' ').join(', '); //replace spaces with ', ' and since first space removed, single element string will not have anny comma
+            return result;
+        }
+        let abilitiesElement = $('<p>'+'Abilities: '+getAbilities(pokemonClicked.abilities)+'</p>');
         
-        // now append every element created to wither the modalTitle or the modalBody
+        // now append every element created to either the modalTitle or the modalBody
         modalTitle.append(nameElement);
         modalBody.append(imageElementFront);
         modalBody.append(imageElementBack);
@@ -119,6 +142,7 @@ let pokemonRepository = (function () {
             console.error(e);
         });
     }
+
 
     return {
         add: add,
