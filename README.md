@@ -6,12 +6,12 @@ MockUp
 ---------	
 Mockup #2
 
-![basic mock-up](img/small%20screen%20app.jpeg)
-![modal mock-up](img/small%20screen%20app%20modal.jpeg)
-![basic mock-up](img/mid%20screen%20app.jpeg)
-![modal mock-up](img/mid%20screen%20app%20modal.jpeg)
-![basic mock-up](img/large%20screen%20app.jpeg)
-![modal mock-up](img/large%20screen%20app%20modal.jpeg)
+![basic mock-up](img2/small%20screen%20app.jpeg)
+![modal mock-up](img2/small%20screen%20app%20modal.png)
+![basic mock-up](img2/mid%20screen%20app.jpeg)
+![modal mock-up](img2/mid%20screen%20app%20modal.png)
+![basic mock-up](img2/large%20screen%20app.png)
+![modal mock-up](img2/large%20screen%20app%20modal.png)
 
 Initial Mockup
 
